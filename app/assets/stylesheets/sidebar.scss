@@ -1,0 +1,109 @@
+.sidebar {
+  height: 100%;
+  min-height: 100%;
+  width: 200px;
+  position: absolute;
+  // overflow-y: scroll;
+
+  .logo {
+    background-color: white;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 110px;
+      height: auto;
+    }
+  }
+
+  .sign-in {
+    background-color: #623055;
+    min-height: 170px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 90px;
+      height: auto;
+    }
+  }
+
+  .sign-in:hover {
+    border: 5px solid white;
+  }
+
+  .daily-products {
+    background-color: #432048;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 140px;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+  .daily-products:hover {
+    border: 5px solid white;
+  }
+
+  .newsletter {
+    background-color: #e48000;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 110px;
+      height: auto;
+    }
+  }
+
+  .newsletter:hover {
+    border: 5px solid white;
+  }
+
+  .add-locals {
+    background-color: #f1391f;
+    min-height: 170px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 110px;
+      height: auto;
+    }
+  }
+
+  .add-locals:hover {
+    border: 5px solid white;
+  }
+
+  .your-recomendations {
+    background-color: #21bd7f;
+    min-height: 170px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 110px;
+      height: auto;
+    }
+  }
+
+  .your-recomendations:hover {
+    border: 5px solid white;
+  }
+}
