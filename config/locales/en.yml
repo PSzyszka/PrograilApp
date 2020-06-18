@@ -1,0 +1,6 @@
+en:
+  email:
+    saved_succesfull: Notifications will be send to your email.
+    not_found: Notifications won't be send to your email any longer.
+    was_deleted: Notifications won't be send to your email any longer.
+
