@@ -4,13 +4,6 @@ gemfile: Gemfile
 services:
   - postgresql
 env: DB=postgres
-before_install:
-  - sudo apt-get update
-  - sudo apt-get --yes remove postgresql\*
-  - sudo apt-get install -y postgresql-10 postgresql-client-10
-  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
-  - sudo service postgresql restart 10
-  - gem update --system
 before_script:
   - psql --version
   - psql -c 'create database prograils_app_test;' -U postgres
@@ -21,15 +14,7 @@ script:
 services:
   - postgresql
 addons:
-  postgresql: '10'
-  apt:
-    packages:
-    - postgresql-10
-    - postgresql-client-10
-  homebrew:
-    packages:
-    - beanstalk
-    update: true
+  postgresql: '9.6'
 env:
   global:
   - PGPORT=5433
