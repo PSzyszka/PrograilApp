@@ -7,17 +7,25 @@ env: DB=postgres
 before_install:
   - sudo apt-get update
   - sudo apt-get --yes remove postgresql\*
-  - sudo apt-get install -y postgresql-11 postgresql-client-11
+  - sudo apt-get install -y postgresql-10 postgresql-client-10
   - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
-  - sudo service postgresql restart 11
+  - sudo service postgresql restart 10
+  - gem update --system
 before_script:
   - psql --version
   - psql -c 'create database prograils_app_test;' -U postgres
-script: bundle exec rake spec
+script:
+  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+  - bundle exec rake spec
+  - bundle exec rubocop --config .rubocop.yml
 services:
   - postgresql
-test:
-  adapter: postgresql
-  database: prograils_app_test
 addons:
-  postgresql: '11.2'
+  postgresql: '10'
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
