@@ -1,7 +1,14 @@
 language: ruby
 
+services:
+  - postgresql
+
 env:
   - DB=postgres
+
+addons:
+  postgresql: '12.3'
+
 rvm:
   - 2.7.1
 
@@ -10,6 +17,10 @@ before_install:
 
 gemfile: Gemfile
 
+before_script:
+  - cp config/database.yml.travis config/database.yml
+
 script:
-  - rake db:migrate RAILS_ENV=test
+  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
   - bundle exec rspec
+  - bundle exec rubocop --config .rubocop.yml
