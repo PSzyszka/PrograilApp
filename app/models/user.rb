@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  VALID_EMAIL_REGEX = %r{/\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i}.freeze
+  VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i.freeze
 
   validates :name, :email, :password, :password_confirmation, presence: true
   validates :email, uniqueness: true
