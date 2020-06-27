@@ -1,3 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+  provider :facebook,
+    Rails.application.credentials.facebook_app_id,
+    Rails.application.credentials.facebook_app_secret,
+    scope: 'email, read_stream', display: 'popup'
 end
