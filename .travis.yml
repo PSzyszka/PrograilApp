@@ -17,15 +17,19 @@
 #   - PGPORT=5433
 
 services:
-    - postgresql
+  - postgresql
 addons:
-    postgresql: '9.6'
+  postgresql: '9.6'
 before_script:
-    - cp config/database.yml.travis config/database.yml
+  - cp config/database.yml.travis config/database.yml
+before_install:
+  - sudo apt-get update
+  - sudo /etc/init.d/postgresql stop
+  - sudo /etc/init.d/postgresql start 9.6
 language: ruby
 rvm:
-    - 2.7.1
+  - 2.7.1
 script:
-    - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
-    - bundle exec rspec
-    - bundle exec rubocop --config .rubocop.yml
+  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+  - bundle exec rspec
+  - bundle exec rubocop --config .rubocop.yml
