@@ -26,6 +26,10 @@ addons:
     packages:
     - postgresql-10
     - postgresql-client-10
+  homebrew:
+    packages:
+    - beanstalk
+    update: true
 env:
   global:
   - PGPORT=5433
