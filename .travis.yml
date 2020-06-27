@@ -17,9 +17,6 @@ before_install:
 
 gemfile: Gemfile
 
-before_script:
-  - cp config/database.yml.travis config/database.yml
-
 script:
   - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
   - bundle exec rspec
