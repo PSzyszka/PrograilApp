@@ -1,0 +1,138 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - bin/*
+    - config/**/*
+    - coverage/**/*
+    - db/**/*
+    - doc/**/*
+    - log/**/*
+    - public/**/*
+    - script/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+Style/Documentation:
+  Exclude:
+    - app/api/**/*
+    - app/controllers/**/*
+    - app/helpers/**/*
+
+Layout/ParameterAlignment:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/AccessModifierIndentation:
+  Enabled: false
+Layout/CommentIndentation:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/DotPosition:
+  EnforcedStyle: trailing
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RescueException:
+  Exclude:
+    - 'lib/tasks/*.rake'
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+    - '**/*.rake'
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/**/*'
+Metrics/MethodLength:
+  Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+
+Naming/PredicateName:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/DescribedClass:
+  EnforcedStyle: explicit
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/ExpectInHook:
+  Exclude:
+    - 'spec/features/**/*'
+RSpec/HookArgument:
+  EnforcedStyle: each
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/ImplicitExpect:
+  EnforcedStyle: is_expected
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+RSpec/NestedGroups:
+  Enabled: false
+RSpec/NotToNot:
+  EnforcedStyle: not_to
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+Style/FormatStringToken:
+  EnforcedStyle: template
+Style/Lambda:
+  Enabled: false
+Style/NestedParenthesizedCalls:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: true
+Style/GuardClause:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: false
+Style/SlicingWithRange:
+  Enabled: true

@@ -109,4 +109,21 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  config.action_mailer.default_url_options = { host: 'https://agile-hollows-17864.herokuapp.com/' }
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.credentials.smtp_address,
+    port:                 587,
+    domain:               'prograils_app',
+    user_name:            Rails.application.credentials.smtp_username,
+    password:             Rails.application.credentials.smtp_password,
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+  config.action_mailer.default_url_options = { host: 'https://agile-hollows-17864.herokuapp.com/' }
+  config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'ALLOWALL'
+  }
 end
