@@ -1,26 +1,23 @@
 language: ruby
-
+rvm: 2.7.1
+gemfile: Gemfile
 services:
   - postgresql
-
-env:
-  - DB=postgres
-
-addons:
-  postgresql: '12.3'
-
-rvm:
-  - 2.7.1
-
+env: DB=postgres
 before_install:
-  - gem install bundler
-
-gemfile: Gemfile
-
+  - sudo apt-get update
+  - sudo apt-get --yes remove postgresql\*
+  - sudo apt-get install -y postgresql-11 postgresql-client-11
+  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
+  - sudo service postgresql restart 11
 before_script:
-  - psql -c 'create database prograils_app_test;'
-
-script:
-  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
-  - bundle exec rspec
-  - bundle exec rubocop --config .rubocop.yml
+  - psql --version
+  - psql -c 'create database prograils_app_test;' -U postgres
+script: bundle exec rake spec
+services:
+  - postgresql
+test:
+  adapter: postgresql
+  database: prograils_app_test
+addons:
+  postgresql: '11.2'
