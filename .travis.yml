@@ -4,11 +4,8 @@ gemfile: Gemfile
 services:
   - postgresql
 env: DB=postgres
-before_script:
-  - psql --version
-  - psql -c 'create database prograils_app_test;' -U postgres
 script:
-  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+  - bundle exec rails db:create db:migrate RAILS_ENV=test
   - bundle exec rake spec
   - bundle exec rubocop --config .rubocop.yml
 services:
