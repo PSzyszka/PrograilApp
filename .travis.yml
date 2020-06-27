@@ -11,6 +11,5 @@ before_install:
 gemfile: Gemfile
 
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
+  - rake db:migrate RAILS_ENV=test
   - bundle exec rspec
