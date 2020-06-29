@@ -1,0 +1,45 @@
+.subscriptions {
+  background-color: #e48000;
+  width: 100%;
+  padding: 100px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 100px 20px 100px 20px;
+  }
+
+  .input {
+    width: 1015px;
+    height: 40px;
+    margin: auto;
+    border-radius: 8px;
+    margin: 0px 20px 10px 0px;
+    color: black;
+    padding-left: 10px;
+
+    @media only screen and (max-width: 1500px) {
+      width: 400px;
+    }
+  }
+
+  .button {
+    width: 240px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #623055;
+    margin-bottom: 10px;
+    color: white;
+
+    @media only screen and (max-width: 1500px) {
+      width: 400px;
+    }
+  }
+
+  .display-md-center {
+    @media only screen and (max-width: 1500px) {
+      width: 400px;
+      margin: auto;
+    }
+  }
+}
+
