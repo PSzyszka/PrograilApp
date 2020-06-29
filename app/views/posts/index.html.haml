@@ -1,0 +1,7 @@
+.posts
+  %h2 Today restaurants menu:
+  - @posts.each do |post|
+    .restaurant-name
+      = post.restaurant.name
+    .description
+      %p= post.description.html_safe
