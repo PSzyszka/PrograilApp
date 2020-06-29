@@ -1,0 +1,12 @@
+.slack-channels
+  - if user_signed_in?
+    .display-md-center
+      %p Follow your favorite restaurants by slack
+      %p If you added your favorites restaurants you also need:
+      %p 1. Paste your slack channel weebhook url
+      %p 2. Type in your slack channel name
+      %p 3. Click save button
+
+    = render partial: '/slack_channels/form', locals: { resource: SlackChannel.new, url: slack_channels_path, method: :post, button: 'Save' }
+    - if @slack_channels.present?
+      = render partial: '/slack_channels/table', locals: { slack_channels: @slack_channels }
