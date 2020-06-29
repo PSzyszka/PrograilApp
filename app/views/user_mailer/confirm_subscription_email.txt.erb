@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  </head>
+  <body>
+    <p>Someone (hopefully you) has requested a daily meal subscription for your email account. Follow the link below to set a subscription:</p>
+    <br/>
+    <p>
+      <%= confirm_email_url(@confirm_token) %>
+    </p>
+    <br/>
+    <p>If you don't wish add a subscription for this email, disregard this email and no action will be taken.</p>
+    <br/>
+    <p>PrograilsApp Team</p>
+    <p>https://agile-hollows-17864.herokuapp.com/</p>
+  </body>
+</html>
