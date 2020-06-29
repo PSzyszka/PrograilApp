@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p Someone (hopefully you) has requested a daily meal subscription for your email account. Follow the link below to set a subscription:
+    %br
+    %p= confirm_email_url(@confirm_token)
+    %br
+    %p If you don't wish add a subscription for this email, disregard this email and no action will be taken.
+    %br
+    %p PrograilsApp Team
+    %p https://agile-hollows-17864.herokuapp.com/
