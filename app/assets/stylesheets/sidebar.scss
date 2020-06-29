@@ -3,11 +3,17 @@
   min-height: 100%;
   width: 200px;
   position: absolute;
-  // overflow-y: scroll;
+  text-align: center;
+  transition: 1s;
+
+  @media only screen and (max-width: 1600px) {
+    left: -200px;
+    overflow-y: scroll;
+  }
 
   .logo {
     background-color: white;
-    min-height: 170px;
+    min-height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +26,7 @@
 
   .sign-in {
     background-color: #623055;
-    min-height: 170px;
+    min-height: 162px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -30,15 +36,16 @@
       width: 90px;
       height: auto;
     }
+
+    .sign-out-image {
+      width: 105px;
+      height: auto;
+    }
   }
 
-  .sign-in:hover {
-    border: 5px solid white;
-  }
-
-  .daily-products {
+  .daily-posts {
     background-color: #432048;
-    min-height: 170px;
+    min-height: 162px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,13 +57,9 @@
     }
   }
 
-  .daily-products:hover {
-    border: 5px solid white;
-  }
-
-  .newsletter {
+  .subscription {
     background-color: #e48000;
-    min-height: 170px;
+    min-height: 162px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,15 +68,11 @@
       width: 110px;
       height: auto;
     }
-  }
-
-  .newsletter:hover {
-    border: 5px solid white;
   }
 
   .add-locals {
     background-color: #f1391f;
-    min-height: 170px;
+    min-height: 162px;
     height: 10%;
     display: flex;
     align-items: center;
@@ -85,13 +84,9 @@
     }
   }
 
-  .add-locals:hover {
-    border: 5px solid white;
-  }
-
-  .your-recomendations {
+  .slack-notifications {
     background-color: #21bd7f;
-    min-height: 170px;
+    min-height: 162px;
     height: 10%;
     display: flex;
     align-items: center;
@@ -103,7 +98,23 @@
     }
   }
 
-  .your-recomendations:hover {
+  .hoverd-menu:hover {
     border: 5px solid white;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .sidebar-icon {
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .sidebar-icon:hover .sidebar {
+    transition: 1s;
+    left: 0;
   }
 }

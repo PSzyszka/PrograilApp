@@ -1,13 +1,28 @@
 .main-window {
+  min-height: 100%;
   display: flex;
+
+  @media only screen and (min-width: 1600px) {
+    margin-left: 200px;
+  }
+}
+
+.messages {
   margin-left: 200px;
-  background-color: #402342;
+  width: 100%;
+
+  .message-alert {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
 }
 
 .main-background {
   height: 100%;
-  background-color: white;
+  background-color: red;
   margin: 0px;
+  width: 100%;
 }
 
 .carousel-image-1 {
