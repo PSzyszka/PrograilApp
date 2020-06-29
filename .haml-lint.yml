@@ -1,3 +1,4 @@
 linters:
   LineLength:
     enabled: false
+  AllCops: 2.7.1
