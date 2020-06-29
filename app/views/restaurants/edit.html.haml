@@ -1,0 +1,4 @@
+.restaurants
+  .display-md-center
+    %h3 Edit restaurant
+  = render partial: '/restaurants/form', locals: { resource: @restaurant, url: restaurant_path(@restaurant.id), method: :put, button: 'Update' }

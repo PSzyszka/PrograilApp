@@ -1,0 +1,29 @@
+%h3.table-title Followed restaurants
+%table.followed-restaurants
+  %thead
+    %tr
+      %th #
+      %th Name
+      %th Facebook Url
+      %th
+      %th
+  %tbody
+    - @restaurants.each_with_index do |restaurant, i|
+      %tr
+        %td= i + 1
+        %td= restaurant.name
+        %td= restaurant.facebook_url
+        %td.button-field= link_to 'Edit', edit_restaurant_path(restaurant.id), method: :get, class: 'edit-button'
+        %td.button-field= link_to 'Delete', restaurant_path(restaurant.id), method: :delete, class: 'delete-button', data: { :confirm => 'Are you sure?' }
+
+.display-md
+  - @restaurants.each_with_index do |restaurant, i|
+    .display-flex
+      %strong Name:
+      %strong= restaurant.name
+      %p.button-field= link_to 'Edit', edit_restaurant_path(restaurant.id), method: :get, class: 'edit-button'
+      %p.button-field= link_to 'Delete', restaurant_path(restaurant.id), method: :delete, class: 'delete-button', data: { :confirm => 'Are you sure?' }
+    .display-flex
+      %strong Facebook Url:
+      .facebook_url
+        %p= restaurant.facebook_url

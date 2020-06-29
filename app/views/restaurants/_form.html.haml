@@ -1,0 +1,24 @@
+.new-restaurant
+  .display-lg
+    %table
+      = form_for(resource, url: url, method: method) do |f|
+        %thead
+          %tr
+            %th Restaurant Name
+            %th Facebook Url
+            %th
+        %tbody
+          %tr
+            %td= f.text_field :name, class: 'input input-name', placeholder: 'Restaurant Name'
+            %td= f.text_field :facebook_url, class: 'input input-url', placeholder: 'e.g. https://www.facebook.com/pg/bistropiccobello/posts/'
+            %td= f.submit button, class: 'button'
+
+  .display-md
+    = form_for(resource, url: url, method: method) do |f|
+      %p
+        %strong Restaurant Name
+      = f.text_field :name, class: 'input input-name', placeholder: 'Restaurant Name'
+      %p
+        %strong Facebook Url
+      = f.text_field :facebook_url, class: 'input input-url', placeholder: 'e.g. https://www.facebook.com/pg/bistropiccobello/posts/'
+      %p= f.submit button, class: 'button'
