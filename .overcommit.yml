@@ -27,9 +27,11 @@ PreCommit:
       - vendor/assets/**/*
 
   HamlLint:
-    enabled: true
+    enabled: false
     exclude:
       - vendor/assets/**/*
+    LineLength:
+      enabled: false
 
   HardTabs:
     enabled: true
