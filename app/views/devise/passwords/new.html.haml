@@ -1,0 +1,20 @@
+.form-container
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'form-left-container', method: :post }) do |f|
+    = render 'devise/shared/error_messages', resource: resource
+    .fields-container
+      %h2 Forgot your password?
+      %br
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input-field', placeholder: 'Email'
+      %br
+      = f.submit 'Send me reset password instructions', class: 'sign-button'
+
+  .vertical-line
+
+  .form-rigth-container
+    .fields-container
+      .title-field
+      - if controller_name != 'sessions'
+        = link_to 'Log in', new_session_path(resource_name), id: 'sign-in', class: 'sign-in-link'
+      %p or
+      - if devise_mapping.registerable? && controller_name != 'registrations'
+        = link_to 'Sign up', new_registration_path(resource_name), id: 'sign-up', class: 'sign-up-link'

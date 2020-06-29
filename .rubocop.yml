@@ -13,6 +13,8 @@ AllCops:
     - tmp/**/*
     - vendor/**/*
     - node_modules/**/*
+    - app/views/**/*
+  TargetRubyVersion: 2.7.1
 
 Style/Documentation:
   Exclude:
@@ -23,6 +25,7 @@ Style/Documentation:
     - app/mailers/**/*
     - app/controllers/**/*
     - app/helpers/**/*
+    - app/views/**/*
     - node_modules/**/*
   # Enabled: false
 
@@ -72,6 +75,7 @@ Layout/LineLength:
   Max: 100
   Exclude:
     - 'spec/**/*'
+    - 'app/views/**/*'
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**/*'

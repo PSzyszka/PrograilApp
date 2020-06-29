@@ -28,8 +28,11 @@ PreCommit:
 
   HamlLint:
     enabled: true
+    flags: ['--no-summary']
     exclude:
       - vendor/assets/**/*
+    LineLength:
+      enabled: false
 
   HardTabs:
     enabled: true
