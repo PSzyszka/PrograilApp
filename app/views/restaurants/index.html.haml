@@ -1,0 +1,14 @@
+.restaurants
+  - if user_signed_in?
+    .display-md-center
+      %p Follow your favorite restaurants
+      %p To do so you need to follow 3 basic steps:
+      .text-flex
+        %p.margin-right 1. Find your favorite restaurant on
+        %a{ href: 'http://facebook.com/', target: '_blank' } facebook
+      -# %p= '1. Find your favorite restaurant on' link_to 'facebook'
+      %p 2. Copy the posts url and add the restaurants name
+      %p 3. Click save button
+    = render partial: '/restaurants/form', locals: { resource: Restaurant.new, url: restaurants_path, method: :post, button: 'Save'}
+    - if @restaurants.present?
+      = render partial: '/restaurants/table', locals: { restaurants: @restaurants }
