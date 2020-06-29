@@ -1,4 +1,18 @@
-@import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'homepage';
+@import 'posts';
+@import 'restaurants';
+@import 'sign_in_up';
 @import 'sidebar';
+@import 'slack_channel';
+@import 'subscriptions';
+
+body {
+  height: 100vh;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0;
+}
