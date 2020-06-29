@@ -12,12 +12,19 @@ AllCops:
     - script/**/*
     - tmp/**/*
     - vendor/**/*
+    - node_modules/**/*
 
 Style/Documentation:
   Exclude:
     - app/api/**/*
+    - app/models/**/*
+    - app/services/**/*
+    - app/workers/**/*
+    - app/mailers/**/*
     - app/controllers/**/*
     - app/helpers/**/*
+    - node_modules/**/*
+  # Enabled: false
 
 Layout/ParameterAlignment:
   Enabled: false
@@ -107,14 +114,11 @@ RSpec/NotToNot:
   EnforcedStyle: not_to
 RSpec/VerifiedDoubles:
   Enabled: false
-
 Style/FormatStringToken:
   EnforcedStyle: template
 Style/Lambda:
   Enabled: false
 Style/NestedParenthesizedCalls:
-  Enabled: false
-Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: true
