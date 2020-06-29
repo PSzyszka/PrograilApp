@@ -1,14 +1,24 @@
-.sidebar
-  .logo
-    = link_to image_tag('/assets/logo.png', class: 'image'), { action: 'index', controller: 'homepage' }
-  .sign-in
-    = link_to image_tag('/assets/person.png', class: 'image'), { action: 'index', controller: 'homepage' }
-  .daily-products
-    = link_to image_tag('/assets/products.png', class: 'image'), { action: 'index', controller: 'homepage' }, class: 'logo-image'
-  .newsletter
-    = link_to image_tag('/assets/email.png', class: 'image'), { action: 'index', controller: 'homepage' }, class: 'logo-image'
-  .add-locals
-    = link_to image_tag('/assets/logo.png', class: 'image'), { action: 'index', controller: 'homepage' }, class: 'logo-image'
-  .your-recomendations
-    = link_to image_tag('/assets/logo.png', class: 'image'), { action: 'index', controller: 'homepage' }, class: 'logo-image'
-  .div
+.sidebar-icon
+  .sidebar
+    %a{href: '/', class: 'logo hoverd-menu'}
+      = image_tag (asset_url 'logo.png'), alt: 'logo', class: 'image'
+    -if user_signed_in?
+      %a{href: destroy_user_session_path, data: { method: :delete }, class: 'sign-in hoverd-menu'}
+        = image_tag (asset_url 'sign_out.png'), alt: 'sign-out', class: 'sign-out-image'
+    - else
+      %a{href: '/users/sign_in', class: 'sign-in hoverd-menu'}
+        = image_tag (asset_url 'facebook_logo.png'), alt: 'sign-in', class: 'image'
+    -if user_signed_in?
+      %a{href: '/posts', class: 'daily-posts hoverd-menu'}
+        = image_tag (asset_url 'products.png'), alt: 'posts', class: 'image'
+      %a{href: '/restaurants', class: 'add-locals hoverd-menu'}
+        = image_tag (asset_url 'restaurant.png'), alt: 'locals', class: 'image'
+      %a{href: '/slack_channels', class: 'slack-notifications hoverd-menu'}
+        = image_tag (asset_url 'slack_logo.png'), alt: 'locals', class: 'image'
+      %a{href: '/subscriptions/new', class: 'subscription hoverd-menu'}
+        = image_tag (asset_url 'email.png'), alt: 'newsletter', class: 'image'
+    - else
+      .daily-posts
+      .add-locals
+      .slack-notifications
+      .subscription
