@@ -1,0 +1,29 @@
+%h3.table-title Slack notification channels
+%table.notified-slack-channels
+  %thead
+    %tr
+      %th #
+      %th Channel Name
+      %th Webhook Url
+      %th
+      %th
+  %tbody
+    - @slack_channels.each_with_index do |slack_channel, i|
+      %tr
+        %td= i + 1
+        %td= slack_channel.name
+        %td= slack_channel.webhook_url
+        %td.button-field= link_to 'Edit', edit_slack_channel_path(slack_channel.id), method: :get, class: 'edit-button'
+        %td.button-field= link_to 'Delete', slack_channel_path(slack_channel.id), method: :delete, class: 'delete-button', data: { confirm: 'Are you sure?' }
+
+.display-md
+  - @slack_channels.each_with_index do |slack_channel, i|
+    .display-flex
+      %strong Channel Name:
+      %strong= slack_channel.name
+      %p.button-field= link_to 'Edit', edit_slack_channel_path(slack_channel.id), method: :get, class: 'edit-button'
+      %p.button-field= link_to 'Delete', slack_channel_path(slack_channel.id), method: :delete, class: 'delete-button', data: { confirm: 'Are you sure?' }
+    .display-flex
+      %strong Webhook Url:
+      .webhook_url
+        %p= slack_channel.webhook_url

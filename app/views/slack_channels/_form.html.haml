@@ -1,0 +1,26 @@
+.new-channel
+  .display-lg
+    %table
+      = form_for(resource, url: url, method: method) do |f|
+        %thead
+          %tr
+            %th Channel Name
+            %th Webhook Url
+            %th
+        %tbody
+          %tr
+            %td= f.text_field :name, class: 'input input-name', placeholder: 'e.g. #prograils'
+            %td= f.text_field :webhook_url, class: 'input input-url', placeholder: 'e.g. https://hooks.slack.com/services/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'
+            = f.hidden_field :user_id, value: current_user.id
+            %td= f.submit button, class: 'button'
+
+  .display-md
+    = form_for(resource, url: url, method: method) do |f|
+      %p
+        %strong Channel Name
+      = f.text_field :name, class: 'input input-name', placeholder: 'e.g. #prograils'
+      %p
+        %strong Webhook Url
+      = f.text_field :webhook_url, class: 'input input-url', placeholder: 'e.g. https://hooks.slack.com/services/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'
+      = f.hidden_field :user_id, value: current_user.id
+      %p= f.submit button, class: 'button'

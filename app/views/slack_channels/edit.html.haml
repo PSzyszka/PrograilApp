@@ -1,0 +1,4 @@
+.slack-channels
+  .display-md-center
+    %h3 Edit slack channel
+  = render partial: '/slack_channels/form', locals: { resource: @slack_channel, url: slack_channel_path(@slack_channel.id), method: :put, button: 'Update' }
