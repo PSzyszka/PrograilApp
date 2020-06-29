@@ -9,6 +9,6 @@
       -# %p= '1. Find your favorite restaurant on' link_to 'facebook'
       %p 2. Copy the posts url and add the restaurants name
       %p 3. Click save button
-    = render partial: '/restaurants/form', locals: { resource: Restaurant.new, url: restaurants_path, method: :post, button: 'Save'}
+    = render partial: '/restaurants/form', locals: { resource: Restaurant.new, url: restaurants_path, method: :post, button: 'Save' }
     - if @restaurants.present?
       = render partial: '/restaurants/table', locals: { restaurants: @restaurants }
