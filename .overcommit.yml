@@ -27,7 +27,8 @@ PreCommit:
       - vendor/assets/**/*
 
   HamlLint:
-    enabled: false
+    enabled: true
+    flags: ['--no-summary']
     exclude:
       - vendor/assets/**/*
     LineLength:
