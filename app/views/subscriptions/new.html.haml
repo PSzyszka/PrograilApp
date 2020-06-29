@@ -1,0 +1,11 @@
+.subscriptions
+  .display-md-center
+    %p Follow your favorite restaurants by email
+    %p 1. Paste your email
+    %p 2. Click save button
+    %p 3. Confirm your account by clicking the link that was send to your email
+
+    = form_for(Subscription.new, url: subscriptions_path, method: :post) do |f|
+      = f.text_field :email, class: 'input', placeholder: 'Email'
+      = f.hidden_field :user_id, value: current_user.id
+      = f.submit 'Save', class: 'button'
