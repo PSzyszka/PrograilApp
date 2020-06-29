@@ -10,6 +10,7 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'haml-rails'
+gem 'haml_lint', require: false
 gem 'httparty'
 gem 'image_optim', '~> 0.26'
 gem 'image_optim_pack'
