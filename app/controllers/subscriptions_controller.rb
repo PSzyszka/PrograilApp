@@ -23,7 +23,7 @@ class SubscriptionsController < ApplicationController
     subscription.update!(email_confirmed: true)
     redirect_to root_path, success: I18n.t('subscription.succesfully_updated')
   rescue ActiveRecord::RecordNotFound
-    redirect_to root_path, alert: I18n.t('slack_channel.not_found')
+    redirect_to root_path, alert: I18n.t('subscription.not_found')
   end
 
   # TODO: create delete method to let user unsubscribe his email
