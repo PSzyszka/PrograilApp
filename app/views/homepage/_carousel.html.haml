@@ -1,0 +1,28 @@
+%section.carousel{ 'aria-label' => 'Gallery' }
+  %ol.carousel__viewport
+    %li#carousel__slide1.carousel__slide{ tabindex: '0' }
+      .carousel__snapper
+        %a.carousel__prev{ href: '#carousel__slide4' } Go to last slide
+        %a.carousel__next{ href: '#carousel__slide2' } Go to next slide
+    %li#carousel__slide2.carousel__slide{ tabindex: '0' }
+      .carousel__snapper
+      %a.carousel__prev{ href: '#carousel__slide1' } Go to previous slide
+      %a.carousel__next{ href: '#carousel__slide3' } Go to next slide
+    %li#carousel__slide3.carousel__slide{ tabindex: '0' }
+      .carousel__snapper
+      %a.carousel__prev{ href: '#carousel__slide2' } Go to previous slide
+      %a.carousel__next{ href: '#carousel__slide4' } Go to next slide
+    %li#carousel__slide4.carousel__slide{ tabindex: '0' }
+      .carousel__snapper
+      %a.carousel__prev{ href: '#carousel__slide3' } Go to previous slide
+      %a.carousel__next{ href: '#carousel__slide1' } Go to first slide
+  %aside.carousel__navigation
+    %ol.carousel__navigation-list
+      %li.carousel__navigation-item
+        %a.carousel__navigation-button{ href: '#carousel__slide1' } Go to slide 1
+      %li.carousel__navigation-item
+        %a.carousel__navigation-button{ href: '#carousel__slide2' } Go to slide 2
+      %li.carousel__navigation-item
+        %a.carousel__navigation-button{ href: '#carousel__slide3' } Go to slide 3
+      %li.carousel__navigation-item
+        %a.carousel__navigation-button{ href: '#carousel__slide4' } Go to slide 4
