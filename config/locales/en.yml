@@ -3,4 +3,18 @@ en:
     saved_succesfull: Notifications will be send to your email.
     not_found: Notifications won't be send to your email any longer.
     was_deleted: Notifications won't be send to your email any longer.
-
+  restaurant:
+    added_succesfully: Restaurant added succesfully.
+    not_found: Restaurant not found.
+    succesfully_updated: Restaurant succesfully updated.
+    succesfully_updated: Restaurant was deleted.
+  slack_channel:
+    created_succesfully: Slack Channel created succesfully.
+    not_found: Slack Channel not found.
+    succesfully_updated: Slack Channel succesfully updated.
+    succesfully_updated: Slack Channel was deleted.
+  subscription:
+    please_confirm_your_email: Subscription was send. Please confirm your email.
+    succesfully_updated: Subscription succesfully updated.
+    not_found: Subscription not found.
+    confirm: Confirm your subscription.
