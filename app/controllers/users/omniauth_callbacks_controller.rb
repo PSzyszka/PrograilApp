@@ -2,7 +2,7 @@
 
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    skip_before_action :authenticate_user!
+    before_action :authenticate_user!, except: %i[facebook after_sign_in_path_for]
 
     def facebook
       result = Users::CreateFromOmniauthOrganizer.call(
