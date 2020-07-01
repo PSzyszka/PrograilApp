@@ -1,18 +1,22 @@
 %section.carousel{ 'aria-label' => 'Gallery' }
   %ol.carousel__viewport
     %li#carousel__slide1.carousel__slide{ tabindex: '0' }
+      = image_tag (asset_url 'food_banner.jpg'), alt: 'food_banner', id: 'carousel__slide1', class: 'carousel__slide'
       .carousel__snapper
         %a.carousel__prev{ href: '#carousel__slide4' } Go to last slide
         %a.carousel__next{ href: '#carousel__slide2' } Go to next slide
     %li#carousel__slide2.carousel__slide{ tabindex: '0' }
+      = image_tag (asset_url 'restaurants_banner.jpg'), alt: 'restaurants_banner', id: 'carousel__slide2', class: 'carousel__slide'
       .carousel__snapper
       %a.carousel__prev{ href: '#carousel__slide1' } Go to previous slide
       %a.carousel__next{ href: '#carousel__slide3' } Go to next slide
     %li#carousel__slide3.carousel__slide{ tabindex: '0' }
+      = image_tag (asset_url 'slack_channel_banner.jpg'), alt: 'slack_channel_banner', id: 'carousel__slide3', class: 'carousel__slide'
       .carousel__snapper
       %a.carousel__prev{ href: '#carousel__slide2' } Go to previous slide
       %a.carousel__next{ href: '#carousel__slide4' } Go to next slide
     %li#carousel__slide4.carousel__slide{ tabindex: '0' }
+      = image_tag (asset_url 'email_banner.jpg'), alt: 'email_banner', id: 'carousel__slide4', class: 'carousel__slide'
       .carousel__snapper
       %a.carousel__prev{ href: '#carousel__slide3' } Go to previous slide
       %a.carousel__next{ href: '#carousel__slide1' } Go to first slide
