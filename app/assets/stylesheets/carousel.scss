@@ -179,28 +179,3 @@ ol, li {
 .carousel::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
-
-#carousel__slide1,
-#carousel__slide2,
-#carousel__slide3,
-#carousel__slide4 {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#carousel__slide1 {
-  background-image: url('food_banner.jpg');
-}
-
-#carousel__slide2 {
-  background-image: url('restaurants_banner.jpg');
-}
-
-#carousel__slide3 {
-  background-image: url('slack_channel_banner.jpg');
-}
-
-#carousel__slide4 {
-  background-image: url('email_banner.jpg');
-}
