@@ -2,7 +2,7 @@
 
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    skip_before_filter :authenticate_user!
+    skip_before_action :authenticate_user!
 
     def facebook
       result = Users::CreateFromOmniauthOrganizer.call(
