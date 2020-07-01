@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i.freeze
 
+  attr_accessible :encrypted_password
+
   validates :name, :email, :password, :password_confirmation, presence: true
   validates :email, uniqueness: true
   validates :name, length: { in: 2..30 }
