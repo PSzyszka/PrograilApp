@@ -7,7 +7,7 @@
     <p>Someone (hopefully you) has requested a daily meal subscription for your email account. Follow the link below to set a subscription:</p>
     <br/>
     <p>
-      <%= confirm_email_url(@confirm_token) %>
+      <%= "#{confirm_email_url}?confirm_token=#{@confirm_token}" %>
     </p>
     <br/>
     <p>If you don't wish add a subscription for this email, disregard this email and no action will be taken.</p>
