@@ -5,7 +5,7 @@
   %body
     %p Someone (hopefully you) has requested a daily meal subscription for your email account. Follow the link below to set a subscription:
     %br
-    %p= confirm_email_url(@confirm_token)
+    %p= "#{confirm_email_url}?confirm_token=#{@confirm_token}"
     %br
     %p If you don't wish add a subscription for this email, disregard this email and no action will be taken.
     %br
