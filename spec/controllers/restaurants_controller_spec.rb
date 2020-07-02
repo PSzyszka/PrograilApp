@@ -11,7 +11,7 @@ RSpec.describe RestaurantsController, type: :controller do
     {
       restaurant: {
         name: 'Restaurant',
-        facebook_url: 'https://www.facebook.com/pg/bistropiccobello/posts/'
+        facebook_url: 'https://www.facebook.com/pg/bistropiccobello/posts/?ref=page_internal'
       }
     }
   end
