@@ -5,9 +5,12 @@ module Notifications
     include Sidekiq::Worker
 
     def perform(post_id)
+      confirmed_subscriptions = Subscription.where(email_confirmed: true)
+      return unless confirmed_subscriptions.any?
+
       post = Post.includes(restaurant: { user_restaurants: { user: :subscriptions } }).
                   joins(restaurant: { user_restaurants: { user: :subscriptions } }).
-                  merge(Subscription.where(email_confirmed: true)).
+                  merge(confirmed_subscriptions).
                   find(post_id)
 
       post.users.each do |user|

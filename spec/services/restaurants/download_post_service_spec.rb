@@ -22,7 +22,7 @@ RSpec.describe Restaurants::DownloadPostService do
           VCR.use_cassette 'services/restaurants/download_not_existing_restaurant_url' do
             restaurant = create(
               :restaurant,
-              facebook_url: 'https://www.facebook.com/pg/bistropiccobellotest/posts/'
+              facebook_url: 'https://www.facebook.com/pg/no_existing/posts/?ref=page_internal'
             )
 
             expect(Notifications::SendEmailWorker).not_to receive(:perform_async)
