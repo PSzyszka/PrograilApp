@@ -5,7 +5,7 @@ module Posts
     include Sidekiq::Worker
 
     def perform
-      posts = Post.where('created_at <= ?', 1.day.ago)
+      posts = Post.where('created_at < ?', Date.current.beginning_of_day)
       posts.each(&:destroy)
     end
   end
