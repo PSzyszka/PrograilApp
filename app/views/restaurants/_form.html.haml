@@ -10,7 +10,7 @@
         %tbody
           %tr
             %td= f.text_field :name, class: 'input input-name', placeholder: 'Restaurant Name'
-            %td= f.text_field :facebook_url, class: 'input input-url', placeholder: 'e.g. https://www.facebook.com/pg/bistropiccobello/posts/'
+            %td= f.text_field :facebook_url, class: 'input input-url', placeholder: 'e.g. https://www.facebook.com/pg/bistropiccobello/posts/?ref=page_internal'
             %td= f.submit button, class: 'button'
 
   .display-md
@@ -20,5 +20,5 @@
       = f.text_field :name, class: 'input input-name', placeholder: 'Restaurant Name'
       %p
         %strong Facebook Url
-      = f.text_field :facebook_url, class: 'input input-url', placeholder: 'e.g. https://www.facebook.com/pg/bistropiccobello/posts/'
+      = f.text_field :facebook_url, class: 'input input-url', placeholder: 'e.g. https://www.facebook.com/pg/bistropiccobello/posts/?ref=page_internal'
       %p= f.submit button, class: 'button'
